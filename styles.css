@@ -9,6 +9,11 @@
     --radius-sm: 980px;
 }
 
+/* --- Efecto de Desplazamiento Suave --- */
+html {
+    scroll-behavior: smooth; /* Esto hace que los enlaces internos bajen suavemente */
+}
+
 /* --- Reseteo Básico --- */
 * {
     margin: 0;
@@ -285,8 +290,22 @@ body {
     overflow: hidden;
 }
 
-#img-timetrack { background: linear-gradient(45deg, #1a1a24, #2a2a35); }
-#img-pavinis { background: linear-gradient(45deg, #241a24, #352a35); }
+/* --- Imágenes de los Proyectos --- */
+#img-timetrack { 
+    background-color: #ffffff; /* Fondo blanco para que coincida con el logo */
+    background-image: url('image_5ac304.png');
+    background-size: contain; /* Asegura que el logo completo se vea sin recortarse */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#img-pavinis { 
+    background-color: #ffffff;
+    background-image: url('image_5ac2e5.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 .project-info {
     padding: 2rem;
@@ -311,4 +330,113 @@ footer {
     color: var(--text-secondary);
     font-size: 0.85rem;
     border-top: 1px solid var(--border-color);
+}
+
+/* --- Sección de Contacto (Nuevo) --- */
+.contact-section {
+    padding: 8rem 2rem 10rem;
+    position: relative;
+    /* Fondo con gradiente sutil al centro */
+    background: radial-gradient(circle at center, rgba(41, 151, 255, 0.08) 0%, rgba(0,0,0,0) 60%);
+}
+
+.contact-card-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+}
+
+/* La tarjeta elevada estilo Apple Pro */
+.contact-card {
+    background: rgba(22, 22, 23, 0.6); /* Glassmorphism oscuro */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 3rem 4rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    max-width: 700px;
+    width: 100%;
+    /* Sutil resplandor azul */
+    box-shadow: 0 10px 40px rgba(41, 151, 255, 0.1), 0 0 1px rgba(255,255,255,0.1);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    border-color: #00d2ff;
+}
+
+/* Ajustes específicos para la foto en la tarjeta */
+.contact-profile {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 0;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+.contact-details h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    margin-bottom: 0.2rem;
+}
+
+.contact-details .role {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-secondary);
+}
+
+.contact-item .icon {
+    font-size: 1.2rem;
+    opacity: 0.7;
+}
+
+/* Enlaces azules estilo Apple */
+.contact-link {
+    color: #2997ff; /* Azul brillante de Apple para enlaces */
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: #00d2ff; /* Brillo cian al pasar el ratón */
+    text-decoration: underline;
+}
+
+/* --- Adaptación para Móviles --- */
+@media (max-width: 600px) {
+    .contact-card {
+        flex-direction: column;
+        padding: 2.5rem;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .contact-item {
+        justify-content: center;
+    }
+    
+    .contact-link {
+        font-size: 1rem;
+    }
 }
